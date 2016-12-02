@@ -1,12 +1,11 @@
 var Album = React.createClass(
   {
     next(){
-      this.state.hinh = parseInt(this.state.hinh) + 1;
-      this.setState(this.state);
+
+      this.setState(hinh: this.state.hinh == 25?25:this.state.hinh + 1);
     },
     prev(){
-      this.state.hinh = parseInt(this.state.hinh) - 1;
-      this.setState(this.state);
+      this.setState(hinh: this.state.hinh == 1?1:this.state.hinh - 1);
     },
     getInitialState(){
       return {hinh: 1};
