@@ -1,17 +1,27 @@
-var Com = React.createClass(
+var Album = React.createClass(
   {
-    add(){
-      this.state.num = parseInt(this.state.num) + 1;
-
+    next(){
+      this.state.hinh = parseInt(this.state.hinh) + 1;
       this.setState(this.state);
-
+    },
+    prev(){
+      this.state.hinh = parseInt(this.state.hinh) - 1;
+      this.setState(this.state);
     },
     getInitialState(){
-      return {num: 0}
+      return {hinh: 1};
     },
     render:function(){
       return(
-        <button onClick={this.add}>Hello {this.state.num}</button>
+        <div className="div-album">
+
+          <button onClick={this.next}>Tiep theo</button>
+          <button onClick={this.prev}>Quay lai</button>
+
+          <hr />
+          <img src={"./images/" + this.state.hinh + ".jpg"} />
+
+        </div>
       )
     }
 
@@ -19,7 +29,7 @@ var Com = React.createClass(
 );
 ReactDOM.render(
 
-  <Com />
+  <Album />
 
 
 
